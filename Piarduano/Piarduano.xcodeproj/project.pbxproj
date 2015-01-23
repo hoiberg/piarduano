@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAC250631A585D3E00B218D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC250621A585D3E00B218D6 /* AppDelegate.swift */; };
+		FAC250651A585D3E00B218D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC250641A585D3E00B218D6 /* ViewController.swift */; };
+		FAC250671A585D3E00B218D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC250661A585D3E00B218D6 /* Images.xcassets */; };
+		FAC2506A1A585D3E00B218D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC250681A585D3E00B218D6 /* Main.storyboard */; };
+		FAC250761A585D3E00B218D6 /* PiarduanoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC250751A585D3E00B218D6 /* PiarduanoTests.swift */; };
+		FAC638D61A5942CF00A4D8DA /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC638D11A5942CF00A4D8DA /* ORSSerialPort.m */; };
+		FAC638D71A5942CF00A4D8DA /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC638D31A5942CF00A4D8DA /* ORSSerialPortManager.m */; };
+		FAC638D81A5942CF00A4D8DA /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC638D51A5942CF00A4D8DA /* ORSSerialRequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAC250701A585D3E00B218D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAC250551A585D3E00B218D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAC2505C1A585D3E00B218D6;
+			remoteInfo = Piarduano;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA49AE101A716B1A0094BF9C /* EditableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableTableView.swift; sourceTree = "<group>"; };
+		FAC2505D1A585D3E00B218D6 /* Piarduano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piarduano.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC250611A585D3E00B218D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC250621A585D3E00B218D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAC250641A585D3E00B218D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAC250661A585D3E00B218D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FAC250691A585D3E00B218D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAC2506F1A585D3E00B218D6 /* PiarduanoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiarduanoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC250741A585D3E00B218D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC250751A585D3E00B218D6 /* PiarduanoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiarduanoTests.swift; sourceTree = "<group>"; };
+		FAC638CF1A5942CF00A4D8DA /* Piarduano-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Piarduano-Bridging-Header.h"; sourceTree = "<group>"; };
+		FAC638D01A5942CF00A4D8DA /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPort.h; sourceTree = "<group>"; };
+		FAC638D11A5942CF00A4D8DA /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPort.m; sourceTree = "<group>"; };
+		FAC638D21A5942CF00A4D8DA /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPortManager.h; sourceTree = "<group>"; };
+		FAC638D31A5942CF00A4D8DA /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPortManager.m; sourceTree = "<group>"; };
+		FAC638D41A5942CF00A4D8DA /* ORSSerialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialRequest.h; sourceTree = "<group>"; };
+		FAC638D51A5942CF00A4D8DA /* ORSSerialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialRequest.m; sourceTree = "<group>"; };
+		FAE475841A5D267B009E8492 /* tone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tone.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAC2505A1A585D3E00B218D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC2506C1A585D3E00B218D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAC250541A585D3E00B218D6 = {
+			isa = PBXGroup;
+			children = (
+				FAC2505F1A585D3E00B218D6 /* Piarduano */,
+				FAC250721A585D3E00B218D6 /* PiarduanoTests */,
+				FAC2505E1A585D3E00B218D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAC2505E1A585D3E00B218D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2505D1A585D3E00B218D6 /* Piarduano.app */,
+				FAC2506F1A585D3E00B218D6 /* PiarduanoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAC2505F1A585D3E00B218D6 /* Piarduano */ = {
+			isa = PBXGroup;
+			children = (
+				FAC250621A585D3E00B218D6 /* AppDelegate.swift */,
+				FAC250641A585D3E00B218D6 /* ViewController.swift */,
+				FA49AE101A716B1A0094BF9C /* EditableTableView.swift */,
+				FAE475841A5D267B009E8492 /* tone.h */,
+				FAC638CF1A5942CF00A4D8DA /* Piarduano-Bridging-Header.h */,
+				FAC638CE1A5942B900A4D8DA /* Serial */,
+				FAC250661A585D3E00B218D6 /* Images.xcassets */,
+				FAC250681A585D3E00B218D6 /* Main.storyboard */,
+				FAC250601A585D3E00B218D6 /* Supporting Files */,
+			);
+			path = Piarduano;
+			sourceTree = "<group>";
+		};
+		FAC250601A585D3E00B218D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAC250611A585D3E00B218D6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAC250721A585D3E00B218D6 /* PiarduanoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAC250751A585D3E00B218D6 /* PiarduanoTests.swift */,
+				FAC250731A585D3E00B218D6 /* Supporting Files */,
+			);
+			path = PiarduanoTests;
+			sourceTree = "<group>";
+		};
+		FAC250731A585D3E00B218D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAC250741A585D3E00B218D6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAC638CE1A5942B900A4D8DA /* Serial */ = {
+			isa = PBXGroup;
+			children = (
+				FAC638D01A5942CF00A4D8DA /* ORSSerialPort.h */,
+				FAC638D11A5942CF00A4D8DA /* ORSSerialPort.m */,
+				FAC638D21A5942CF00A4D8DA /* ORSSerialPortManager.h */,
+				FAC638D31A5942CF00A4D8DA /* ORSSerialPortManager.m */,
+				FAC638D41A5942CF00A4D8DA /* ORSSerialRequest.h */,
+				FAC638D51A5942CF00A4D8DA /* ORSSerialRequest.m */,
+			);
+			name = Serial;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAC2505C1A585D3E00B218D6 /* Piarduano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC250791A585D3E00B218D6 /* Build configuration list for PBXNativeTarget "Piarduano" */;
+			buildPhases = (
+				FAC250591A585D3E00B218D6 /* Sources */,
+				FAC2505A1A585D3E00B218D6 /* Frameworks */,
+				FAC2505B1A585D3E00B218D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Piarduano;
+			productName = Piarduano;
+			productReference = FAC2505D1A585D3E00B218D6 /* Piarduano.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAC2506E1A585D3E00B218D6 /* PiarduanoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC2507C1A585D3E00B218D6 /* Build configuration list for PBXNativeTarget "PiarduanoTests" */;
+			buildPhases = (
+				FAC2506B1A585D3E00B218D6 /* Sources */,
+				FAC2506C1A585D3E00B218D6 /* Frameworks */,
+				FAC2506D1A585D3E00B218D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAC250711A585D3E00B218D6 /* PBXTargetDependency */,
+			);
+			name = PiarduanoTests;
+			productName = PiarduanoTests;
+			productReference = FAC2506F1A585D3E00B218D6 /* PiarduanoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAC250551A585D3E00B218D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Balancing Rock";
+				TargetAttributes = {
+					FAC2505C1A585D3E00B218D6 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					FAC2506E1A585D3E00B218D6 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = FAC2505C1A585D3E00B218D6;
+					};
+				};
+			};
+			buildConfigurationList = FAC250581A585D3E00B218D6 /* Build configuration list for PBXProject "Piarduano" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAC250541A585D3E00B218D6;
+			productRefGroup = FAC2505E1A585D3E00B218D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAC2505C1A585D3E00B218D6 /* Piarduano */,
+				FAC2506E1A585D3E00B218D6 /* PiarduanoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAC2505B1A585D3E00B218D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC250671A585D3E00B218D6 /* Images.xcassets in Resources */,
+				FAC2506A1A585D3E00B218D6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC2506D1A585D3E00B218D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAC250591A585D3E00B218D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC638D61A5942CF00A4D8DA /* ORSSerialPort.m in Sources */,
+				FAC638D71A5942CF00A4D8DA /* ORSSerialPortManager.m in Sources */,
+				FAC250651A585D3E00B218D6 /* ViewController.swift in Sources */,
+				FAC250631A585D3E00B218D6 /* AppDelegate.swift in Sources */,
+				FAC638D81A5942CF00A4D8DA /* ORSSerialRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC2506B1A585D3E00B218D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC250761A585D3E00B218D6 /* PiarduanoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAC250711A585D3E00B218D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAC2505C1A585D3E00B218D6 /* Piarduano */;
+			targetProxy = FAC250701A585D3E00B218D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAC250681A585D3E00B218D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAC250691A585D3E00B218D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAC250771A585D3E00B218D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAC250781A585D3E00B218D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FAC2507A1A585D3E00B218D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Piarduano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Piarduano/Piarduano-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAC2507B1A585D3E00B218D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Piarduano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Piarduano/Piarduano-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		FAC2507D1A585D3E00B218D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PiarduanoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Piarduano.app/Contents/MacOS/Piarduano";
+			};
+			name = Debug;
+		};
+		FAC2507E1A585D3E00B218D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PiarduanoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Piarduano.app/Contents/MacOS/Piarduano";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAC250581A585D3E00B218D6 /* Build configuration list for PBXProject "Piarduano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC250771A585D3E00B218D6 /* Debug */,
+				FAC250781A585D3E00B218D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC250791A585D3E00B218D6 /* Build configuration list for PBXNativeTarget "Piarduano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC2507A1A585D3E00B218D6 /* Debug */,
+				FAC2507B1A585D3E00B218D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC2507C1A585D3E00B218D6 /* Build configuration list for PBXNativeTarget "PiarduanoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC2507D1A585D3E00B218D6 /* Debug */,
+				FAC2507E1A585D3E00B218D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAC250551A585D3E00B218D6 /* Project object */;
+}
