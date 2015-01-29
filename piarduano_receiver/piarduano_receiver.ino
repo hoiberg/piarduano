@@ -22,7 +22,10 @@ void loop() {
     if (frequency == 0) {
       noTone(buzPin);
     } else {
+      // uncomment the following line if you want to have feedback:
+      //Serial.print(frequency);
       tone(buzPin, frequency);
     }
   }
 }
+

@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Balancing Rock. All rights reserved.
 //
 
-// NOG DOEN: NSTABLEVIEW EDITING!!
-
 import Cocoa
 import Foundation
 
@@ -30,6 +28,10 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
     @IBOutlet weak var frequencyColumn: NSTableColumn!
     @IBOutlet weak var timeColumn: NSTableColumn!
 
+    @IBOutlet weak var replayButton: NSButton!
+    
+    @IBOutlet var alertTextField: NSTextField!
+    
     var frequenciesRecord: [Double] = []
     var timesRecord: [Double] = []
     
@@ -41,6 +43,8 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
     var startTime: NSDate!
 
     var isRecording = false
+    
+    var isReplaying = false
 
     var connectionIsOpen: Bool {
         if serialPort != nil { return serialPort!.open } else { return false }
@@ -66,7 +70,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
                              [C7, Db7, D7, Eb7, E7, F7, Gb7, G7, Ab7, LA7, Bb7, B7]]
 
     
-//MARK: Functions
+//MARK: - Main functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,7 +81,8 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         // register event handler for keydown
         NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent! in
 
-            if self.connectionIsOpen && self.recordingTableView.currentEditor() == nil {
+            // only do a key down event if 1) A connection is open, 2) The recordingsTableView isn't being edited and 3) if it is not replaying at the moment
+            if self.connectionIsOpen && self.recordingTableView.currentEditor() == nil && !self.isReplaying {
                 
                 // get the keyboard key
                 let theKey = event.charactersIgnoringModifiers
@@ -139,7 +144,8 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         // register event handler for keyup
         NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyUpMask, handler: { (event) -> NSEvent! in
             
-            if self.connectionIsOpen && self.recordingTableView.currentEditor() == nil {
+            // only do a key up event if 1) A connection is open, 2) The recordingsTableView isn't being edited and 3) if it is not replaying at the moment
+            if self.connectionIsOpen && self.recordingTableView.currentEditor() == nil && !self.isReplaying {
                 
                 // get the keyboard key
                 var theKey = event.charactersIgnoringModifiers
@@ -154,8 +160,9 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
                     // calculate the time interval for the key that was pressed and now released
                     let timeInterval = NSDate().timeIntervalSinceDate(self.lastKeyDownTime!)
                 
-                    // add it to the record
+                    // add it to the record and update the lastkeyuptime
                     self.timesRecord.append(timeInterval)
+                    self.lastKeyUpTime = NSDate()
                     
                     // reload talbeview
                     self.recordingTableView.reloadData()
@@ -176,7 +183,19 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
     
     override func viewWillDisappear() {
         // instead of applicationWillTerminate
+        sendFrequency(0)
         serialPort?.close()
+    }
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showCodeView" {
+            
+            let dest = segue.destinationController as ExportViewController
+            dest.code = generateCode().code
+            
+        }
+        
     }
     
     func sendFrequency(freq: Float) {
@@ -215,7 +234,120 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         return (0, 0)
     }
     
-//MARK: ORSSerialPortDelegate functions
+    func replayNextNote(previousTimer: NSTimer?) {
+        
+        println("replaynextnote got called")
+        
+        // stop if replaying has been stopped
+        if !isReplaying {
+            sendFrequency(0)
+            return
+        }
+        
+        // index of the note to play
+        var noteIndex = 0
+        
+        // if this isn't the first note
+        if previousTimer != nil {
+            // get the index of the next note to play
+            noteIndex = previousTimer!.userInfo as Int
+        }
+        
+        // end replay if neccesary
+        if noteIndex >= frequenciesRecord.count || noteIndex >= timesRecord.count {
+            sendFrequency(0)
+            replayButton.title = "Replay"
+            isReplaying = false
+            return
+        }
+        
+        // select the tableview row at the index to show where we are (and scroll to that row)
+        recordingTableView.selectRowIndexes(NSIndexSet(index: noteIndex), byExtendingSelection: false)
+        recordingTableView.scrollRowToVisible(noteIndex)
+        
+        // send frequency
+        let freq = Float(frequenciesRecord[noteIndex])
+        sendFrequency(freq)
+        
+        // shedule next timer with next note as userinfo
+        var timer = NSTimer.scheduledTimerWithTimeInterval(timesRecord[noteIndex], target: self, selector: Selector("replayNextNote:"), userInfo: ++noteIndex, repeats: false)
+        
+    }
+    
+    func generateCode() -> (abort: Bool, code: String) {
+        
+        var code = ""
+        var arrayName = ""
+        
+        // ask how to name the array
+        var alert = NSAlert()
+        alert.messageText = "Enter a name for the arrays"
+        
+        alertTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 22))
+        alert.accessoryView = alertTextField
+        
+        alert.addButtonWithTitle("Go")
+        alert.addButtonWithTitle("Cancel")
+        alert.alertStyle = NSAlertStyle.InformationalAlertStyle
+        
+        if alert.runModal() == NSAlertFirstButtonReturn {
+            
+            // get input and set arrayName
+            arrayName = alertTextField.stringValue
+            
+        } else {
+            
+            // abort
+            return (true, code)
+            
+        }
+        
+        // now create the code string
+        
+        // first the count of the number of notes
+        code = "#define \(arrayName)Count \(frequenciesRecord.count)\n"
+        
+        
+        // now the notes array
+        code += "float \(arrayName)Notes[] = {"
+        
+        for (index, freq) in enumerate(frequenciesRecord) {
+            
+            code += NSString(format: "%.1f", freq)
+                
+            if index < frequenciesRecord.endIndex-1 {
+                code += ", "
+            }
+            
+        }
+        
+        // end notes array
+        code += "};\n"
+        
+        
+        // now the time intervals array
+        code += "int \(arrayName)Durations[] = {"
+        
+        for (index, seconds) in enumerate(timesRecord) {
+            
+            let milliSeconds = Int(seconds * Double(1000))
+            code += "\(milliSeconds)"
+
+            if index < timesRecord.endIndex-1 {
+                code += ", "
+            }
+            
+        }
+
+        // end time intervals array
+        code += "};\n"
+        
+        // done!
+        return (false, code)
+        
+    }
+    
+//MARK: - ORSSerialPortDelegate functions
     func serialPortWasRemovedFromSystem(givenSerialPort: ORSSerialPort!) {
         // log it
         log("Serial port \(givenSerialPort.path) has been removed from system!")
@@ -272,7 +404,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         }
     }
     
-//MARK: NSCombobox datasource
+//MARK: - NSCombobox datasource
     func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
         var portAtIndex = portManager.availablePorts[index] as ORSSerialPort
         return portAtIndex.path
@@ -282,7 +414,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         return portManager.availablePorts.count
     }
     
-//MARK: NSTableView datasource
+//MARK: - NSTableView datasource
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return frequenciesRecord.count
     }
@@ -331,7 +463,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         
     }
     
-//MARK: IBActions
+//MARK: - IBActions
     @IBAction func RecordPressed(sender: NSButton) {
         
         if isRecording {
@@ -364,6 +496,12 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
             
         } else {
             
+            // cannot record while replaying
+            if isReplaying {
+                log("Cannot record while replaying")
+                return
+            }
+            
             // start recording
             sender.title = "Pause Recording"
             
@@ -388,9 +526,54 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         }
     }
     
-    @IBAction func reloadSerialPaths(sender: AnyObject) {
-        serialPathBox.reloadData()
+    @IBAction func replayPressed(sender: NSButton) {
+        
+        // don't replay if a recording is going or if a key is being pressed
+        if isRecording || pressedKey != ""  {
+            log("Cannot replay while recording or while a key is being pressed")
+            return
+        }
+        
+        if !isReplaying {
+            
+            // change ui
+            sender.title = "Stop"
+            
+            // start replaying
+            isReplaying = true
+            replayNextNote(nil)
+            
+        } else {
+            
+            // change ui
+            sender.title = "Replay"
+            
+            // stop replaying
+            isReplaying = false
+            
+        }
     }
-
+    
+    @IBAction func clearPressed(sender: NSButton) {
+        
+        // don't clear if a recording is goingor if a key is being pressed
+        if isRecording || pressedKey != ""  {
+            log("Cannot clear recording while recording or while a key is being pressed")
+            return
+        }
+        
+        // clear recordingsarrays
+        frequenciesRecord.removeAll(keepCapacity: false)
+        timesRecord.removeAll(keepCapacity: false)
+        
+        // reload table view
+        recordingTableView.reloadData()
+    }
+    
+    @IBAction func exportToCode(sender: NSButton) {
+        
+        performSegueWithIdentifier("showCodeView", sender: self)
+        
+    }
 }
 
