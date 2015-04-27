@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7531"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -415,17 +415,17 @@ DQ
                         <outlet property="shiftSegments" destination="NSg-hh-wWu" id="4MW-oY-2TR"/>
                         <outlet property="startConnectionButton" destination="Uwy-vH-v4X" id="ckE-AM-feu"/>
                         <outlet property="timeColumn" destination="GLe-d1-BUX" id="EJo-zL-0wm"/>
-                        <segue destination="QfI-0v-ODt" kind="sheet" identifier="showCodeView" id="u6t-Qq-7kH"/>
+                        <segue destination="Nga-gT-aNT" kind="sheet" identifier="showExportView" id="yFh-7c-Ah7"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="164" y="802"/>
         </scene>
-        <!--Export View Controller-->
+        <!--Code View Controller-->
         <scene sceneID="I3Z-NU-UOQ">
             <objects>
-                <viewController id="QfI-0v-ODt" customClass="ExportViewController" customModule="Piarduano" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QfI-0v-ODt" customClass="CodeViewController" customModule="Piarduano" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="k5r-45-cb5">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -469,7 +469,87 @@ DQ
                 </viewController>
                 <customObject id="rtV-gn-sUa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="1340"/>
+            <point key="canvasLocation" x="269" y="1340"/>
+        </scene>
+        <!--Export View Controller-->
+        <scene sceneID="faT-fj-lyf">
+            <objects>
+                <viewController id="Nga-gT-aNT" customClass="ExportViewController" customModule="Piarduano" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="tcE-ud-f31">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K8G-QH-HF0">
+                                <rect key="frame" x="267" y="13" width="169" height="32"/>
+                                <buttonCell key="cell" type="push" title="Generate Code" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hcn-AZ-SZi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="generateCode:" target="Nga-gT-aNT" id="MlZ-o3-h4t"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olk-Uz-qlL">
+                                <rect key="frame" x="14" y="13" width="95" height="32"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dMn-Ao-0r1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancel:" target="Nga-gT-aNT" id="wbp-ST-OIq"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EbV-Vj-bTW">
+                                <rect key="frame" x="20" y="224" width="410" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Song name" drawsBackground="YES" id="cB5-DP-FR8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhx-Z5-4U4">
+                                <rect key="frame" x="18" y="182" width="219" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="Single Array" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="rvT-sT-y68" id="4Ml-bX-qXc">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="1PC-P9-02g">
+                                        <items>
+                                            <menuItem title="Single Array" state="on" id="rvT-sT-y68">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Two Arrays" id="WYF-oR-jLZ">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijt-rc-Jty">
+                                <rect key="frame" x="159" y="263" width="132" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Options" id="yZn-13-Aah">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="cancel" destination="olk-Uz-qlL" id="654-3z-kFE"/>
+                        <outlet property="nameField" destination="EbV-Vj-bTW" id="cNo-WK-iXW"/>
+                        <outlet property="numberOfArraysPopUp" destination="Rhx-Z5-4U4" id="ksu-e7-2X9"/>
+                        <segue destination="QfI-0v-ODt" kind="popover" identifier="showCodeView" popoverBehavior="t" preferredEdge="maxY" id="XIM-Wb-rE0"/>
+                    </connections>
+                </viewController>
+                <customObject id="i61-bE-wbc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="1340"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="dgU-gJ-6oc">
@@ -503,7 +583,7 @@ DQ
                                 <rect key="frame" x="20" y="20" width="440" height="660"/>
                                 <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Yo1-Ee-SGk">
                                     <font key="font" metaFont="system"/>
-                                    <mutableString key="title">  #define tonePin 8
+                                    <string key="title">  #define tonePin 8
 
   // only change the following three lines (and update the variable names in the rest of the sketch)  
   #define songCount 13
@@ -531,7 +611,7 @@ DQ
       currentTone++;
       if (currentTone == songCount) currentTone = 0;    
   }
-</mutableString>
+</string>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

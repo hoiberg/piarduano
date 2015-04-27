@@ -189,10 +189,11 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
     
     override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "showCodeView" {
+        if segue.identifier == "showExportView" {
             
-            let dest = segue.destinationController as ExportViewController
-            dest.code = generateCode().code
+            let dest = segue.destinationController as! ExportViewController
+            dest.frequenciesRecord = frequenciesRecord
+            dest.timesRecord = timesRecord
             
         }
         
@@ -209,7 +210,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         logTextView.textStorage?.appendAttributedString(NSAttributedString(string: "\(toLog)\n"))
         
         // scroll to the end
-        let length = countElements(logTextView.string!)
+        let length = count(logTextView.string!)
         let range: NSRange = NSMakeRange(length, 0)
         logTextView.scrollRangeToVisible(range)
     }
@@ -250,7 +251,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         // if this isn't the first note
         if previousTimer != nil {
             // get the index of the next note to play
-            noteIndex = previousTimer!.userInfo as Int
+            noteIndex = previousTimer!.userInfo as! Int
         }
         
         // end replay if neccesary
@@ -273,80 +274,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         var timer = NSTimer.scheduledTimerWithTimeInterval(timesRecord[noteIndex], target: self, selector: Selector("replayNextNote:"), userInfo: ++noteIndex, repeats: false)
         
     }
-    
-    func generateCode() -> (abort: Bool, code: String) {
         
-        var code = ""
-        var arrayName = ""
-        
-        // ask how to name the array
-        var alert = NSAlert()
-        alert.messageText = "Enter a name for the arrays"
-        
-        alertTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 22))
-        alert.accessoryView = alertTextField
-        
-        alert.addButtonWithTitle("Go")
-        alert.addButtonWithTitle("Cancel")
-        alert.alertStyle = NSAlertStyle.InformationalAlertStyle
-        
-        if alert.runModal() == NSAlertFirstButtonReturn {
-            
-            // get input and set arrayName
-            arrayName = alertTextField.stringValue
-            
-        } else {
-            
-            // abort
-            return (true, code)
-            
-        }
-        
-        // now create the code string
-        
-        // first the count of the number of notes
-        code = "#define \(arrayName)Count \(frequenciesRecord.count)\n"
-        
-        
-        // now the notes array
-        code += "float \(arrayName)Notes[] = {"
-        
-        for (index, freq) in enumerate(frequenciesRecord) {
-            
-            code += NSString(format: "%.1f", freq)
-                
-            if index < frequenciesRecord.endIndex-1 {
-                code += ", "
-            }
-            
-        }
-        
-        // end notes array
-        code += "};\n"
-        
-        
-        // now the time intervals array
-        code += "int \(arrayName)Durations[] = {"
-        
-        for (index, seconds) in enumerate(timesRecord) {
-            
-            let milliSeconds = Int(seconds * Double(1000))
-            code += "\(milliSeconds)"
-
-            if index < timesRecord.endIndex-1 {
-                code += ", "
-            }
-            
-        }
-
-        // end time intervals array
-        code += "};\n"
-        
-        // done!
-        return (false, code)
-        
-    }
-    
 //MARK: - ORSSerialPortDelegate functions
     func serialPortWasRemovedFromSystem(givenSerialPort: ORSSerialPort!) {
         // log it
@@ -397,7 +325,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
         // if it can be converted to a string, log it..
         if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
             // append to the textbuffer
-            textBuffer += string
+            textBuffer += string as String
             
             // wait a couple of seconds for the rest of the string to arrive
             NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("logBuffer"), userInfo: nil, repeats: false)
@@ -406,7 +334,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
     
 //MARK: - NSCombobox datasource
     func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
-        var portAtIndex = portManager.availablePorts[index] as ORSSerialPort
+        var portAtIndex = portManager.availablePorts[index] as! ORSSerialPort
         return portAtIndex.path
     }
     
@@ -446,7 +374,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
     func tableView(tableView: NSTableView, setObjectValue object: AnyObject?, forTableColumn tableColumn: NSTableColumn?, row: Int) {
         
         // a tableviewcell has been edited!! Get the frequency and update one of the arrays!
-        let newFreq = object as NSString
+        let newFreq = object as! NSString
         
         if tableColumn == frequencyColumn {
             
@@ -572,7 +500,7 @@ class ViewController: NSViewController, ORSSerialPortDelegate, NSComboBoxDataSou
     
     @IBAction func exportToCode(sender: NSButton) {
         
-        performSegueWithIdentifier("showCodeView", sender: self)
+        performSegueWithIdentifier("showExportView", sender: self)
         
     }
 }

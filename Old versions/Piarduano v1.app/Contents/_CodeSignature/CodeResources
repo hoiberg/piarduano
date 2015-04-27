@@ -12,7 +12,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NBhQbF5t9fGE1oyxfrrS3SJR0nM=
+			DGcf5rOG/E8UA1D7dkooS5KmLo8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -21,16 +21,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7lp1jSEu5Q+qZ60fFVGfjVnjz4A=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/Base.lproj/Main.storyboardc/NSViewController-Nga-gT-aNT.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			J1sMFHjn2S0VQhldvG+M63ht4fw=
+			Vbd43G7qw4ypMW2O5eDa+m+pZg4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -39,7 +30,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			91a293aJq3fBGrsNrGZFPkvwrvo=
+			wltpfKlnfqHSsI+2qvTqp7FRPcQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -48,7 +39,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			p801ZU+6BQ2fgNI/NrLWnIdm4tA=
+			TTa9la4ViRLNUUK2N9Q3C5P5/4w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -57,16 +48,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GTSrLxBfolNFCA9GEdeWzl5iBfw=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/Base.lproj/Main.storyboardc/Nga-gT-aNT-view-tcE-ud-f31.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			VGsVv8Zb+CUndl00ccq54w+zoKM=
+			RTwhqsdMmbaNMPdE3pdNfdz1qno=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -75,7 +57,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JruFeCGkdfXU+zcMEzFGWzfr7f0=
+			DC2OjyIfjIwm95HSbd+5mxEWGH0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -93,7 +75,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zrw0pINqtLjrDhfTlT40fO1cj8U=
+			U9EMsPSJg6fkNCyrip9rPh3KKuc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -105,7 +87,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			O89GjssMYp3M3D8+jpA+aKdRcVY=
+			uGoXj7TBWnVIaslF9TI3Jg473r4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftAppKit" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -114,7 +96,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			aIzDPIpXYIxzlBbwCZoEFhFUrXg=
+			YbzsGRuBS9hXLs9EckMxIPbs/z0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftCore" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -123,7 +105,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			6U8Oj/lGQLTnsH9LvhOjB2vKCoE=
+			ZCjgBGichP5GwpF8nSds3alZQxM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftCoreGraphics" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -132,7 +114,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			NIFvMYYS+uGIAUJ0ZGHLdXcKzJ4=
+			Bpl7futdteQqrDwp9qm0T8cl45A=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftDarwin" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -141,7 +123,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			S77kW00jPOnwhRz7kjdgS83+X2M=
+			F+4FHYJC+snYsQMQQP2KAQ4drX8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftDispatch" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -150,7 +132,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ciHr+S+tuR39Yptoy00vvlmLcdI=
+			y1IXI6x/5Rc1MgvZVFHdIlMboO4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftFoundation" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -159,7 +141,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			pgq8ZFAbwYg8QqsyCQ5/oFmpuyA=
+			RZjgDDierBJYv6qlE+V/A1YBa6k=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftObjectiveC" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -168,7 +150,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			GBITQDOKviFlnC3rlNqYWvfZlCQ=
+			J3fi/gO3gI+2ov7cVFStf13+BFI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftQuartzCore" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -177,7 +159,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oE77GGC7Am+loGjkdUSNl++DDnw=
+			JAPJQLmRuj3cWueb+XsoKapwj0w=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.apple.dt.runtime.swiftSecurity" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Marinus Van Der Lugt (HRKX4X9UA3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -190,7 +172,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NBhQbF5t9fGE1oyxfrrS3SJR0nM=
+			DGcf5rOG/E8UA1D7dkooS5KmLo8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -199,16 +181,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7lp1jSEu5Q+qZ60fFVGfjVnjz4A=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/Base.lproj/Main.storyboardc/NSViewController-Nga-gT-aNT.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			J1sMFHjn2S0VQhldvG+M63ht4fw=
+			Vbd43G7qw4ypMW2O5eDa+m+pZg4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -217,7 +190,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			91a293aJq3fBGrsNrGZFPkvwrvo=
+			wltpfKlnfqHSsI+2qvTqp7FRPcQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -226,7 +199,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			p801ZU+6BQ2fgNI/NrLWnIdm4tA=
+			TTa9la4ViRLNUUK2N9Q3C5P5/4w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -235,16 +208,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GTSrLxBfolNFCA9GEdeWzl5iBfw=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/Base.lproj/Main.storyboardc/Nga-gT-aNT-view-tcE-ud-f31.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			VGsVv8Zb+CUndl00ccq54w+zoKM=
+			RTwhqsdMmbaNMPdE3pdNfdz1qno=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -253,7 +217,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JruFeCGkdfXU+zcMEzFGWzfr7f0=
+			DC2OjyIfjIwm95HSbd+5mxEWGH0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -271,7 +235,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zrw0pINqtLjrDhfTlT40fO1cj8U=
+			U9EMsPSJg6fkNCyrip9rPh3KKuc=
 			</data>
 			<key>optional</key>
 			<true/>

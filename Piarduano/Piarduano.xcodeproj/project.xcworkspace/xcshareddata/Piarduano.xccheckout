@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>FA8BEA1B-5352-4A61-BF56-C10FB5B2DF9A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Piarduano</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CCD35CAA625D5FA2CC6BAD66E4E9001D79339692</key>
 		<string>https://github.com/hoiberg/piarduano.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Piarduano/Piarduano.xcodeproj</string>
+	<string>Piarduano/Piarduano.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CCD35CAA625D5FA2CC6BAD66E4E9001D79339692</key>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA85D61F1AEE23C100E0E6F0 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85D61E1AEE23C100E0E6F0 /* ExportViewController.swift */; };
 		FAC250631A585D3E00B218D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC250621A585D3E00B218D6 /* AppDelegate.swift */; };
 		FAC250651A585D3E00B218D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC250641A585D3E00B218D6 /* ViewController.swift */; };
 		FAC250671A585D3E00B218D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC250661A585D3E00B218D6 /* Images.xcassets */; };
@@ -15,7 +16,7 @@
 		FAC638D61A5942CF00A4D8DA /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC638D11A5942CF00A4D8DA /* ORSSerialPort.m */; };
 		FAC638D71A5942CF00A4D8DA /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC638D31A5942CF00A4D8DA /* ORSSerialPortManager.m */; };
 		FAC638D81A5942CF00A4D8DA /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC638D51A5942CF00A4D8DA /* ORSSerialRequest.m */; };
-		FAF8EE2D1A762916007C6989 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8EE2C1A762916007C6989 /* ExportViewController.swift */; };
+		FAF8EE2D1A762916007C6989 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8EE2C1A762916007C6989 /* CodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA85D61E1AEE23C100E0E6F0 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		FAC2505D1A585D3E00B218D6 /* Piarduano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piarduano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC250611A585D3E00B218D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC250621A585D3E00B218D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		FAC638D41A5942CF00A4D8DA /* ORSSerialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialRequest.h; sourceTree = "<group>"; };
 		FAC638D51A5942CF00A4D8DA /* ORSSerialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialRequest.m; sourceTree = "<group>"; };
 		FAE475841A5D267B009E8492 /* tone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tone.h; sourceTree = "<group>"; };
-		FAF8EE2C1A762916007C6989 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
+		FAF8EE2C1A762916007C6989 /* CodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,8 @@
 			children = (
 				FAC250621A585D3E00B218D6 /* AppDelegate.swift */,
 				FAC250641A585D3E00B218D6 /* ViewController.swift */,
-				FAF8EE2C1A762916007C6989 /* ExportViewController.swift */,
+				FA85D61E1AEE23C100E0E6F0 /* ExportViewController.swift */,
+				FAF8EE2C1A762916007C6989 /* CodeViewController.swift */,
 				FAE475841A5D267B009E8492 /* tone.h */,
 				FAC638CF1A5942CF00A4D8DA /* Piarduano-Bridging-Header.h */,
 				FAC638CE1A5942B900A4D8DA /* Serial */,
@@ -241,8 +244,9 @@
 			files = (
 				FAC638D61A5942CF00A4D8DA /* ORSSerialPort.m in Sources */,
 				FAC638D71A5942CF00A4D8DA /* ORSSerialPortManager.m in Sources */,
-				FAF8EE2D1A762916007C6989 /* ExportViewController.swift in Sources */,
+				FAF8EE2D1A762916007C6989 /* CodeViewController.swift in Sources */,
 				FAC250651A585D3E00B218D6 /* ViewController.swift in Sources */,
+				FA85D61F1AEE23C100E0E6F0 /* ExportViewController.swift in Sources */,
 				FAC250631A585D3E00B218D6 /* AppDelegate.swift in Sources */,
 				FAC638D81A5942CF00A4D8DA /* ORSSerialRequest.m in Sources */,
 			);
